@@ -4,7 +4,6 @@ import "./Header.css";
 function App() {
   return (
     <div className="App">
-      <h1>PARTH</h1>
       <Header />
       {/* {Home} */}
     </div>
