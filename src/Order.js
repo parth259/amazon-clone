@@ -3,14 +3,11 @@ import "./Order.css";
 import moment from "moment";
 import CheckoutProduct from "./CheckoutProduct";
 import FormatCurrency from "react-format-currency";
-import { IntlProvider, addLocaleData } from "react-intl";
-import en from "react-intl/locale-data/en";
 
-addLocaleData([...en]);
 
 function Order({ order }) {
   return (
-    <IntlProvider locale="en">
+   
     <div className="order">
       <h2>Order</h2>
       <p>{moment.unix(order.data.created).format("MMMM Do YYYY, h:mma")}</p>
@@ -38,7 +35,7 @@ function Order({ order }) {
         prefix={"$"}
       />
     </div>
-    </IntlProvider>
+   
   );
 }
 export default Order;

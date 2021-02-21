@@ -8,10 +8,6 @@ import FormatCurrency from "react-format-currency";
 import { getCartTotal } from "./reducer";
 import axios from "./axios";
 import { db } from "./firebase";
-import { IntlProvider, addLocaleData } from "react-intl";
-import english from "react-intl/locale-data/en";
-
-addLocaleData([english]);
 
 function Payment() {
   const [{ cart, user }, dispatch] = useStateValue();
@@ -44,7 +40,7 @@ function Payment() {
   console.log("👱", user);
 
   const handleSubmit = async (event) => {
-    // do all the fancy stripe stuff...
+    
     event.preventDefault();
     setProcessing(true);
 
@@ -87,76 +83,74 @@ function Payment() {
   };
 
   return (
-    <IntlProvider locale="en">
-      <div className="payment">
-        <div className="payment__container">
-          <h1>
-            Checkout (<Link to="/checkout">{cart?.length} items</Link>)
-          </h1>
+    <div className="payment">
+      <div className="payment__container">
+        <h1>
+          Checkout (<Link to="/checkout">{cart?.length} items</Link>)
+        </h1>
 
-          {/* Payment section - delivery address */}
-          <div className="payment__section">
-            <div className="payment__title">
-              <h3>Delivery Address</h3>
-            </div>
-            <div className="payment__address">
-              <p>{user?.email}</p>
-              <p>123 React Lane</p>
-              <p>Los Angeles, CA</p>
-            </div>
+        {/* Payment section - delivery address */}
+        <div className="payment__section">
+          <div className="payment__title">
+            <h3>Delivery Address</h3>
           </div>
+          <div className="payment__address">
+            <p>{user?.email}</p>
+            <p>123 React Lane</p>
+            <p>Los Angeles, CA</p>
+          </div>
+        </div>
 
-          {/* Payment section - Review Items */}
-          <div className="payment__section">
-            <div className="payment__title">
-              <h3>Review items and delivery</h3>
-            </div>
-            <div className="payment__items">
-              {cart.map((item) => (
-                <CheckoutProduct
-                  id={item.id}
-                  title={item.title}
-                  image={item.image}
-                  price={item.price}
-                  rating={item.rating}
+        {/* Payment section - Review Items */}
+        <div className="payment__section">
+          <div className="payment__title">
+            <h3>Review items and delivery</h3>
+          </div>
+          <div className="payment__items">
+            {cart.map((item) => (
+              <CheckoutProduct
+                id={item.id}
+                title={item.title}
+                image={item.image}
+                price={item.price}
+                rating={item.rating}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Payment section - Payment method */}
+        <div className="payment__section">
+          <div className="payment__title">
+            <h3>Payment Method</h3>
+          </div>
+          <div className="payment__details">
+            {/* Stripe magic will go */}
+
+            <form onSubmit={handleSubmit}>
+              <CardElement onChange={handleChange} />
+
+              <div className="payment__priceContainer">
+                <FormatCurrency
+                  renderText={(value) => (<h3>Order Total: {value}</h3>)}
+                  decimalScale={2}
+                  value={getCartTotal(cart)}
+                  displayType={"text"}
+                  thousandSeparator={true}
+                  prefix={"$"}
                 />
-              ))}
-            </div>
-          </div>
+                <button disabled={processing || disabled || succeeded}>
+                  <span>{processing ? <p>Processing</p> : "Buy Now"}</span>
+                </button>
+              </div>
 
-          {/* Payment section - Payment method */}
-          <div className="payment__section">
-            <div className="payment__title">
-              <h3>Payment Method</h3>
-            </div>
-            <div className="payment__details">
-              {/* Stripe magic will go */}
-
-              <form onSubmit={handleSubmit}>
-                <CardElement onChange={handleChange} />
-
-                <div className="payment__priceContainer">
-                  <FormatCurrency
-                    renderText={(value) => <h3>Order Total: {value}</h3>}
-                    decimalScale={2}
-                    value={getCartTotal(cart)}
-                    displayType={"text"}
-                    thousandSeparator={true}
-                    prefix={"$"}
-                  />
-                  <button disabled={processing || disabled || succeeded}>
-                    <span>{processing ? <p>Processing</p> : "Buy Now"}</span>
-                  </button>
-                </div>
-
-                {/* Errors */}
-                {error && <div>{error}</div>}
-              </form>
-            </div>
+              {/* Errors */}
+              {error && <div>{error}</div>}
+            </form>
           </div>
         </div>
       </div>
-    </IntlProvider>
+    </div>
   );
 }
 

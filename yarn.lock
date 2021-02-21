@@ -1476,12 +1476,30 @@
     "@formatjs/ecma402-abstract" "1.5.3"
     "tslib" "^2.0.1"
 
+"@formatjs/intl-getcanonicallocales@1.5.3":
+  "integrity" "sha512-QVBnSPZ32Y80wkXbf36hP9VbyklbOb8edppxFcgO9Lbd47zagllw65Y81QOHEn/j11JcTn2OhW0vea95LHvQmA=="
+  "resolved" "https://registry.npmjs.org/@formatjs/intl-getcanonicallocales/-/intl-getcanonicallocales-1.5.3.tgz"
+  "version" "1.5.3"
+  dependencies:
+    "cldr-core" "38"
+    "tslib" "^2.0.1"
+
 "@formatjs/intl-listformat@5.0.6":
   "integrity" "sha512-9QM4elGPrSSMOsf4bKaDUYpFTgXtxNeTdtaxc4QBTreD68X3YMH7N/tve1MxxhbTMB2qsK08mYtSHp5r+y4pTw=="
   "resolved" "https://registry.npmjs.org/@formatjs/intl-listformat/-/intl-listformat-5.0.6.tgz"
   "version" "5.0.6"
   dependencies:
     "@formatjs/ecma402-abstract" "1.5.3"
+    "tslib" "^2.0.1"
+
+"@formatjs/intl-locale@^2.4.15":
+  "integrity" "sha512-uRmdqkBbRPWOuts1OPBepdAMm3sNnJKlWDnNkRqP6Ej+lubzLypuQ5fE/ORwjiSwxK+bULuvzh+E1eER7YTO8Q=="
+  "resolved" "https://registry.npmjs.org/@formatjs/intl-locale/-/intl-locale-2.4.15.tgz"
+  "version" "2.4.15"
+  dependencies:
+    "@formatjs/ecma402-abstract" "1.5.3"
+    "@formatjs/intl-getcanonicallocales" "1.5.3"
+    "cldr-core" "38"
     "tslib" "^2.0.1"
 
 "@formatjs/intl-relativetimeformat@8.0.5":
@@ -3832,6 +3850,11 @@
     "define-property" "^0.2.5"
     "isobject" "^3.0.0"
     "static-extend" "^0.1.1"
+
+"cldr-core@38":
+  "integrity" "sha512-Da9xKjDp4qGGIX0VDsBqTan09iR5nuYD2a/KkfEaUyqKhu6wFVNRiCpPDXeRbpVwPBY6PgemV8WiHatMhcpy4A=="
+  "resolved" "https://registry.npmjs.org/cldr-core/-/cldr-core-38.1.0.tgz"
+  "version" "38.1.0"
 
 "clean-css@^4.2.3":
   "integrity" "sha512-VcMWDN54ZN/DS+g58HYL5/n4Zrqe8vHJpGA8KdgUXFU4fuP/aHNw8eld9SyEIyabIMJX/0RaY/fplOo5hYLSFA=="
