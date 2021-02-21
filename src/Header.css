@@ -57,13 +57,13 @@
   color: white;
 }
 
-.header__optionBasket {
+.header__optionCart {
   color: white;
   display: flex;
   align-items: center;
 }
 
-.header__basketCount {
+.header__cartCount {
   margin-right: 10px;
   margin-left: 10px;
 }
