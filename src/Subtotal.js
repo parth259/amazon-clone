@@ -12,6 +12,7 @@ function Subtotal() {
   return (
     <div className="subtotal">
       <FormatCurrency
+        currency="CAD"
         renderText={(value) => (
           <>
             <p>

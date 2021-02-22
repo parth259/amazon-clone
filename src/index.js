@@ -5,13 +5,16 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import reducer, { initialState } from "./reducer";
 import { StateProvider } from "./StateProvider";
+import { IntlProvider } from "react-intl";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <StateProvider initialState={initialState} reducer={reducer}>
-      <App />
-    </StateProvider>
-  </React.StrictMode>,
+  <IntlProvider locale="en">
+    <React.StrictMode>
+      <StateProvider initialState={initialState} reducer={reducer}>
+        <App />
+      </StateProvider>
+    </React.StrictMode>
+  </IntlProvider>,
   document.getElementById("root")
 );
 

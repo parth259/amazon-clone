@@ -4,10 +4,8 @@ import moment from "moment";
 import CheckoutProduct from "./CheckoutProduct";
 import FormatCurrency from "react-format-currency";
 
-
 function Order({ order }) {
   return (
-   
     <div className="order">
       <h2>Order</h2>
       <p>{moment.unix(order.data.created).format("MMMM Do YYYY, h:mma")}</p>
@@ -25,6 +23,7 @@ function Order({ order }) {
         />
       ))}
       <FormatCurrency
+        currency="CAD"
         renderText={(value) => (
           <h3 className="order__total">Order Total: {value}</h3>
         )}
@@ -35,7 +34,6 @@ function Order({ order }) {
         prefix={"$"}
       />
     </div>
-   
   );
 }
 export default Order;

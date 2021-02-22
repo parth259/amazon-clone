@@ -8,6 +8,7 @@ import FormatCurrency from "react-format-currency";
 import { getCartTotal } from "./reducer";
 import axios from "./axios";
 import { db } from "./firebase";
+import { IntlProvider, addLocaleData } from "react-intl";
 
 function Payment() {
   const [{ cart, user }, dispatch] = useStateValue();
@@ -40,7 +41,6 @@ function Payment() {
   console.log("👱", user);
 
   const handleSubmit = async (event) => {
-    
     event.preventDefault();
     setProcessing(true);
 
@@ -132,7 +132,8 @@ function Payment() {
 
               <div className="payment__priceContainer">
                 <FormatCurrency
-                  renderText={(value) => (<h3>Order Total: {value}</h3>)}
+                  currency="CAD"
+                  renderText={(value) => <h3>Order Total: {value}</h3>}
                   decimalScale={2}
                   value={getCartTotal(cart)}
                   displayType={"text"}
