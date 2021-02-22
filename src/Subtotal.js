@@ -1,9 +1,10 @@
 import React from "react";
 import "./Subtotal.css";
-import FormatCurrency from "react-format-currency";
+// import FormatCurrency from "react-format-currency";
 import { useStateValue } from "./StateProvider";
 import { getCartTotal } from "./reducer";
 import { useHistory } from "react-router-dom";
+import  CurrencyFormat  from "react-currency-format";
 
 function Subtotal() {
   const history = useHistory();
@@ -11,8 +12,7 @@ function Subtotal() {
 
   return (
     <div className="subtotal">
-      <FormatCurrency
-        currency="CAD"
+      <CurrencyFormat
         renderText={(value) => (
           <>
             <p>

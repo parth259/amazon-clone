@@ -2,7 +2,8 @@ import React from "react";
 import "./Order.css";
 import moment from "moment";
 import CheckoutProduct from "./CheckoutProduct";
-import FormatCurrency from "react-format-currency";
+// import FormatCurrency from "react-format-currency";
+import CurrencyFormat from "react-currency-format";
 
 function Order({ order }) {
   return (
@@ -22,8 +23,7 @@ function Order({ order }) {
           hideButton
         />
       ))}
-      <FormatCurrency
-        currency="CAD"
+      <CurrencyFormat
         renderText={(value) => (
           <h3 className="order__total">Order Total: {value}</h3>
         )}

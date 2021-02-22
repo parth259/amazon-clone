@@ -4,11 +4,11 @@ import { useStateValue } from "./StateProvider";
 import CheckoutProduct from "./CheckoutProduct";
 import { Link, useHistory } from "react-router-dom";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
-import FormatCurrency from "react-format-currency";
+// import FormatCurrency from "react-format-currency";
 import { getCartTotal } from "./reducer";
 import axios from "./axios";
 import { db } from "./firebase";
-import { IntlProvider, addLocaleData } from "react-intl";
+import  CurrencyFormat  from "react-currency-format";
 
 function Payment() {
   const [{ cart, user }, dispatch] = useStateValue();
@@ -131,8 +131,7 @@ function Payment() {
               <CardElement onChange={handleChange} />
 
               <div className="payment__priceContainer">
-                <FormatCurrency
-                  currency="CAD"
+                <CurrencyFormat
                   renderText={(value) => <h3>Order Total: {value}</h3>}
                   decimalScale={2}
                   value={getCartTotal(cart)}
