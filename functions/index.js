@@ -38,4 +38,4 @@ exports.api = functions.https.onRequest(app);
 
 //example endpoint
 
-//http://localhost:5001/clone-d5468/us-central1/api
+
