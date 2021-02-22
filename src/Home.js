@@ -8,7 +8,7 @@ function Home() {
       <div className="home__container">
         <img
           className="home__image"
-          src="https://images-eu.ssl-images-amazon.com/images/G/02/digital/video/merch2016/Hero/Covid19/Generic/GWBleedingHero_ENG_COVIDUPDATE__XSite_1500x600_PV_en-GB._CB428684220_.jpg"
+          src="https://images-na.ssl-images-amazon.com/images/G/15/kindle/merch/2019/4852331/GatewayENCA-Tall-Hero-3000x1200._CB413527479_.jpg"
           alt=""
         />
 
@@ -21,28 +21,28 @@ function Home() {
             image="https://play-lh.googleusercontent.com/O2gxsYNyCZakxMihhvtFt0s2riZxS3yrOsaQ0zhWtgeFnrRez9So70pQwFz7PI-AfCAn9jazBTE_AQ=s400-rw"
           />
           <Product
-            id="49538094"
-            title="Kenwood kMix Stand Mixer for Baking, Stylish Kitchen Mixer with K-beater, Dough Hook and Whisk, 5 Litre Glass Bowl"
-            price={239.0}
-            rating={4}
-            image="https://images-na.ssl-images-amazon.com/images/I/81O%2BGNdkzKL._AC_SX450_.jpg"
+            id="23445930"
+            title="Amazon Echo (3rd generation) | Smart speaker with Alexa, Charcoal Fabric"
+            price={98.99}
+            rating={5}
+            image="https://media.very.co.uk/i/very/P6LTG_SQ1_0000000071_CHARCOAL_SLf?$300x400_retinamobilex2$"
           />
         </div>
 
         <div className="home__row">
           <Product
             id="49038505"
-            title="Samsung LC49RG90SSUXEN 49' Curved LED Gaming Monitor"
-            price={199.99}
-            rating={3}
-            image="https://images-na.ssl-images-amazon.com/images/I/71Swqqe7XAL._AC_SX466_.jpg"
+            title="Kindle Paperwhite – Now Waterproof with 2x the Storage"
+            price={139.99}
+            rating={4}
+            image="https://m.media-amazon.com/images/I/61eAq6gg-XL._AC_UL480_FMwebp_QL65_.jpg"
           />
           <Product
-            id="23445930"
-            title="Amazon Echo (3rd generation) | Smart speaker with Alexa, Charcoal Fabric"
-            price={98.99}
-            rating={5}
-            image="https://media.very.co.uk/i/very/P6LTG_SQ1_0000000071_CHARCOAL_SLf?$300x400_retinamobilex2$"
+            id="49538094"
+            title="Kenwood kMix Stand Mixer for Baking, Stylish Kitchen Mixer with K-beater, Dough Hook and Whisk, 5 Litre Glass Bowl"
+            price={239.0}
+            rating={4}
+            image="https://images-na.ssl-images-amazon.com/images/I/81O%2BGNdkzKL._AC_SX450_.jpg"
           />
           <Product
             id="32543543"
@@ -68,3 +68,11 @@ function Home() {
 }
 
 export default Home;
+
+<Product
+  id="49538094"
+  title="Kenwood kMix Stand Mixer for Baking, Stylish Kitchen Mixer with K-beater, Dough Hook and Whisk, 5 Litre Glass Bowl"
+  price={239.0}
+  rating={4}
+  image="https://images-na.ssl-images-amazon.com/images/I/81O%2BGNdkzKL._AC_SX450_.jpg"
+/>;
